@@ -1,0 +1,33 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-7 text-center">
+
+        <h1 id="hometext" class="font-weight-bold display-4">This is To-do Woo!</h1>
+        <br>
+        <h1>🐰🐰🐰</h1>
+        <br> 
+        <p>Are you an Adventurous person who takes up new challenges Everyday?
+        Do you feel that life sometimes gets out of control and wish somehow you could get things done more efficiently?</p>
+        <p>Then fellow Hooman, This is the Website for you! 😉
+        Organize your Work and Always stay on Toes with the <strong>To-do Woo</strong> App! </p>
+        <br>
+        {% if user.is_authenticated %}
+        <a role="button" id="blogtitle" class="btn btn-primary btn-lg" href="{% url 'currenttodos' %}">View To-dos</a>
+        {% else %}
+
+        <a role="button" id="blogtitle" class="btn btn-primary btn-lg" href="{% url 'signupuser' %}">Start</a>
+        {% endif %}
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <hr>
+        
+        <small class="text-muted">Developed with 💖 by Srinjana © </small>
+    </div>
+</footer>
+{% endblock %}
